@@ -1,17 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom'; // Correct: Import without '/client'
 import './index.css';
-import App from './App';
+import TimerApp from './App';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+// Get the DOM element where your React app will attach
+const container = document.getElementById('root'); // Make sure 'root' matches your index.html's div ID
+
+// Use the standard React 17 ReactDOM.render() method
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <TimerApp /> {/* Your main application component */}
+  </React.StrictMode>,
+  container // Pass the DOM element here
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// If you want to start measuring performance in your app...
 reportWebVitals();
